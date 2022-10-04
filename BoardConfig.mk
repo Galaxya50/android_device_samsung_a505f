@@ -31,3 +31,7 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/device_manifest.xml
 
 ## Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    LLVM=1 \
+    LLVM_IAS=1
