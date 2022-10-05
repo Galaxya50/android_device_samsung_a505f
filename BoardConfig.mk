@@ -14,17 +14,20 @@
 # limitations under the License.
 
 ## Inherit from the common tree
-include device/samsung/a50-common/BoardConfigCommon.mk
+include device/samsung/universal9610-common/BoardConfigCommon.mk
 
 ## Inherit from the proprietary configuration
-include vendor/samsung/a505f/BoardConfigVendor.mk
+include vendor/samsung/a50/BoardConfigVendor.mk
 
-DEVICE_PATH := device/samsung/a505f
+DEVICE_PATH := device/samsung/a50
 
-TARGET_OTA_ASSERT_DEVICE := a505f,a50,a50dd
+TARGET_OTA_ASSERT_DEVICE := a50
 
 ## APEX image
 DEXPREOPT_GENERATE_APEX_IMAGE := true
+
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_a50
 
 ## Manifest
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/device_manifest.xml
